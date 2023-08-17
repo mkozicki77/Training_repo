@@ -1,0 +1,11 @@
+name: Manual Approval
+on:
+  workflow_dispatch:
+
+jobs:
+  hold:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Waiting for Approval
+      run: |
+        echo "The job is paused and waiting for approval."

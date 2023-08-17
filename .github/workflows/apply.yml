@@ -1,0 +1,14 @@
+name: Terraform Apply
+on:
+  workflow_dispatch:
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Terraform Apply
+      run: |
+        terraform init
+        terraform apply -auto-approve
