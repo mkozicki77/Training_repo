@@ -19,26 +19,26 @@ resource "azurerm_resource_group" "rg" {
   location = var.location
 }
 
-resource "azurerm_kubernetes_cluster" "learning_cluster" {
-  name                = var.k8s_cluster_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  dns_prefix          = var.dns_prefix
+# resource "azurerm_kubernetes_cluster" "learning_cluster" {
+#   name                = var.k8s_cluster_name
+#   location            = azurerm_resource_group.rg.location
+#   resource_group_name = azurerm_resource_group.rg.name
+#   dns_prefix          = var.dns_prefix
 
-  default_node_pool {
-    name       = "default"
-    node_count = var.node_count
-    vm_size    = var.vm_size
-  }
+#   default_node_pool {
+#     name       = "default"
+#     node_count = var.node_count
+#     vm_size    = var.vm_size
+#   }
 
-  identity {
-    type = "SystemAssigned"
-  }
+#   identity {
+#     type = "SystemAssigned"
+#   }
 
-  tags = {
-    Environment = "Stage"
-  }
-}
+#   tags = {
+#     Environment = "Stage"
+#   }
+# }
 
 # resource "azurerm_storage_account" "tfstate" {
 #   name                     = "tfstatek8s12344321"
