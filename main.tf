@@ -27,8 +27,8 @@ provider "azurerm" {
 
 resource "azurerm_kubernetes_cluster" "learning_cluster" {
   name                = var.k8s_cluster_name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = var.location
+  resource_group_name = data.azurerm_resource_group.existing.name
   dns_prefix          = var.dns_prefix
 
   default_node_pool {
