@@ -29,14 +29,4 @@ variable node_count  {
   default     = 1
   description = "Node count number for Node Pool"
 }
-variable storage_account_name {
-  type        = string
-  default     = "tfstatek8slearning"
-  description = "the name of storage account where tfstate will be hold"
-}
 
-variable container_name {
-  type        = string
-  default     = "tfstate"
-  description = "the name of container where tfstate will be hold"
-}

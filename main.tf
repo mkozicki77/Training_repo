@@ -6,9 +6,9 @@ terraform {
     }
   }
     backend "azurerm" {
-      resource_group_name  = var.resource_group_name
-      storage_account_name = var.storage_account_name
-      container_name       = var.container_name
+      resource_group_name  = "K8s_training_cluster"
+      storage_account_name = "tfstatek8slearning"
+      container_name       = "tfstate"
       key                  = "terraform.tfstate"
   }
 
